@@ -1,16 +1,19 @@
 use num_bigint::BigInt;
 use num_traits::Zero;
-use crate::prime_test::prime_prob_test;
 
+mod prime_prob_test;
+
+#[allow(dead_code)]
 const N: u32 = 8;
-const L: usize = 20;
+
+const L: usize = 10;
 
 fn next_prime(n: &BigInt) -> BigInt {
     let mut p = n.clone();
     if &p % 2 == BigInt::zero() {
         p = p + 1;
     }
-    while !prime_prob_test::prime_test_m(N, &p) {
+    while !prime_prob_test::prime_test_m_rand(N, &p) {
         p = p + 2;
     }
     p
