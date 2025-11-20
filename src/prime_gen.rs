@@ -1,11 +1,13 @@
 use num_bigint::BigInt;
 use num_traits::Zero;
 
-mod prime_prob_test;
+pub mod prime_prob_test;
 
 #[allow(dead_code)]
+//número de testes para a função prime_m_rand()
 const N: u32 = 8;
 
+//quantidade de números primos gerados
 const L: usize = 10;
 
 fn next_prime(n: &BigInt) -> BigInt {
